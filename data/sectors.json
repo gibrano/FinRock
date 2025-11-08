@@ -107,5 +107,13 @@
     "BAE Systems": "Defense",
     "Safran": "Aerospace",
     "Rolls-Royce": "Aerospace",
-    "Thales": "Defense"
+    "Thales": "Defense",
+    "BTC": "Crypto",
+    "ETH": "Crypto",
+    "SOL": "Crypto",
+    "USD": "Foreign Exchange",
+    "EUR": "Foreign Exchange",
+    "JPY": "Foreign Exchange",
+    "CHF": "Foreign Exchange",
+    "GBP": "Foreign Exchange"
 }

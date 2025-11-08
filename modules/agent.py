@@ -21,9 +21,9 @@ class FinRock:
                         Analyze the following news and determine whether it could affect the stock price 
                         of any of the target sectors or specific stocks listed below.
                         
-                        For each **affected sector**, identify which **stocks within it** are most likely to be impacted.  
+                        For each **affected sector**, identify which **stocks within it** are most likely to be impacted in the near future.  
                         Then, for each affected sector, classify the overall expected price movement as 
-                        "Up", "Down", or "No Change", and briefly explain why.
+                        "Strong Up", "Mild Up", "Mild Down", "Strong Down", or "No Change", and briefly explain why.
                         
                         If a sector and its stocks are not meaningfully affected, mark the sector as "unaffected."
                         
@@ -41,7 +41,7 @@ class FinRock:
                               "sector": {{
                                 "<sector_name>": ["<stock_1>", "<stock_2>", ...]
                               }},
-                              "stock_price_effect": "<Up|Down|No Change>",
+                              "stock_price_effect": "<Strong Up|Mild Up|Strong Down|Mild Down|No Change>",
                               "reasoning": "<short explanation>"
                             }}
                           ],
@@ -86,7 +86,7 @@ class FinRock:
             model="gpt-5",
             input=input,
             reasoning={
-                "effort": "medium"
+                "effort": "high"
             }
         )
         
@@ -105,7 +105,7 @@ class FinRock:
         affected = {}
 
         for sector in np.unique(list(stocks2sectors.values())):
-            affected[sector] = {'Up': 0, 'Down': 0, 'No Change': 0}
+            affected[sector] = {'Strong Up': 0, 'Strong Down': 0, 'Mild Up': 0, 'Mild Down': 0, 'No Change': 0}
         
         N = len(self.data["articles"])
         for i in range(N):
