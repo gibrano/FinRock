@@ -13,7 +13,7 @@ import json
 
 class NewsCollector:
     def __init__(self, start_date, end_date):
-        self.NEWS_API_KEY = "3884f57e128e46cba4f1a6f38eaa0027"
+        self.NEWS_API_KEY = ""
         self.start_date = start_date
         self.end_date = end_date
 
@@ -67,7 +67,6 @@ class NewsCollector:
             url = article["url"]
             print(i, "portal --->",url)
             web_page = self.get_page(url)
-            print("content --->",web_page[:20])
             news_article = Article(url="")
             news_article.set_html(web_page)
             news_article.parse()

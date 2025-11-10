@@ -11,7 +11,7 @@ import numpy as np
 
 class FinRock:
     def __init__(self, news_content):
-        os.environ['OPENAI_API_KEY'] = "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"
+        os.environ['OPENAI_API_KEY'] = ""
         self.PROMPT = '''
                         You are a financial analyst AI specialized in understanding global news 
                         and its potential impact on both **market sectors** and **specific stocks** 
@@ -21,7 +21,8 @@ class FinRock:
                         Analyze the following news and determine whether it could affect the stock price 
                         of any of the target sectors or specific stocks listed below.
                         
-                        For each **affected sector**, identify which **stocks within it** are most likely to be impacted in the near future.  
+                        For each **affected sector**, identify which **stocks within it** are most likely to 
+                        be impacted in the near future (from 1 to 7 days in the future).  
                         Then, for each affected sector, classify the overall expected price movement as 
                         "Strong Up", "Mild Up", "Mild Down", "Strong Down", or "No Change", and briefly explain why.
                         
